@@ -317,14 +317,14 @@ BigData random_bigdata(bool include_image_and_pointcloud = true)
   data.basic_types_values(basic_types_values);
 
   if (include_image_and_pointcloud) {
-    //std::cout << "Generating image" << std::endl;
-    //data.image_value(random_image(1920 * 1080 * 3));
-    //std::cout << "Generating point cloud" << std::endl;
-    //data.point_cloud_value(random_pointcloud(4 * 4 * 4 * 1280 * 960));
     std::cout << "Generating image" << std::endl;
-    data.image_value(random_image(1024 * 1024 * 0.5));
+    data.image_value(random_image(1920 * 1080 * 3));
     std::cout << "Generating point cloud" << std::endl;
-    data.point_cloud_value(random_pointcloud(1024  * 1024 * 0.5));
+    data.point_cloud_value(random_pointcloud(4 * 4 * 4 * 1280 * 960));
+    //std::cout << "Generating image" << std::endl;
+    //data.image_value(random_image(1024 * 1024 * 0.5));
+    //std::cout << "Generating point cloud" << std::endl;
+    //data.point_cloud_value(random_pointcloud(1024  * 1024 * 0.5));
   } else {
     data.image_value(random_image(0));
     data.point_cloud_value(random_pointcloud(0));
