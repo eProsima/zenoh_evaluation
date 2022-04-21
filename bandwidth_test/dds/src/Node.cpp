@@ -101,7 +101,8 @@ Node::~Node()
 
 bool Node::init()
 {
-  DomainParticipantQos pqos;
+  DomainParticipantFactory::get_instance()->load_profiles();
+  DomainParticipantQos pqos = DomainParticipantFactory::get_instance()->get_default_participant_qos();
   pqos.name(name_.c_str());
 
   participant_ = DomainParticipantFactory::get_instance()->create_participant(0, pqos);
